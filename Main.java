@@ -1,35 +1,32 @@
-
-import java.util.Scanner;
-public class Main
+//declare an interface with two methods area and perimeter one variable pi implement the interface by two different classes square and circle
+interface Maining {
+   
+    double pi=3.14;
+}
+class Square implements Maining{
+    public int areaMethod(int a){
+        return (a*a);
+    }
+    public int  perimeterMethod(int b){
+        return (4*b);
+    }
+}
+class Circle implements Maining{
+    public double areaMethod(int c){
+        return (pi*c*c);
+    }
+    public double  perimeterMethod(int d){
+        return (2*pi*d);
+    }
+}
+class Main
 {
-	public static void main(String[] args) {
-	    Scanner s=new Scanner(System.in);
-	    String str=s.nextLine();
-	    int b[]=new int[27];
-	    int index=26;
-	    for(int i=0;i<str.length();i++)
-	    {
-	        if(str.charAt(i)>='a'&& str.charAt(i)<='z')
-	        index=str.charAt(i)-'a';
-	        else if(str.charAt(i)>='A'&& str.charAt(i)<='Z')
-	        index=str.charAt(i)-'A';
-	        else 
-	        index=26;
-	        b[index]=1;
-	        
-	        
-	    }
-	    int flag=0;
-	    for(int i=0;i<26;i++)
-	    {
-	        if(b[i]==0)
-	        {
-	            System.out.println("FALSE");
-	            flag=1;
-	            break;
-	        }
-	    }
-	    if(flag==0)
-	    System.out.println("TRUE");
-	}
+    public static void main(String args[]){
+        Square obj=new Square();
+        Circle obj1=new Circle();
+        System.out.println(obj.areaMethod(4));
+        System.out.println(obj.perimeterMethod(9));
+        System.out.println(obj1.areaMethod(4));
+        System.out.println(obj1.perimeterMethod(9));
+    }
 }
